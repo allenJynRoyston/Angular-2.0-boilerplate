@@ -17,6 +17,7 @@ A quickstart boilerplate for those who want to dive into [Angular 2.0](https://a
 
 ### Dependencies
 - NPM
+- Typescript (not required, but you *should* use it.  The .ts file looks WAAAY cleanier than it's .js couterpart)
 
 
 
