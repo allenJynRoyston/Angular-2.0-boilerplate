@@ -9,27 +9,46 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var AppComponent, HeaderComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
+            //---------- Components --------//
+            //----------
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App IS WORKING!</h1>'
+                        template: "\n        <div class=\"callout primary\">\n          <h5>This is a secondary panel</h5>\n          <p>It has an easy to override visual style, and is appropriately subdued.</p>\n          <a href=\"#\">It's dangerous to go alone, take this.</a>\n        </div>\n        "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             })();
             exports_1("AppComponent", AppComponent);
+            //----------
+            //----------
+            HeaderComponent = (function () {
+                function HeaderComponent() {
+                }
+                HeaderComponent = __decorate([
+                    core_1.Component({
+                        selector: 'ng-header',
+                        template: '<h1>The Header</h1>'
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], HeaderComponent);
+                return HeaderComponent;
+            })();
+            exports_1("HeaderComponent", HeaderComponent);
         }
     }
 });
+//----------
+//-------------------------------//
 //# sourceMappingURL=app.component.js.map

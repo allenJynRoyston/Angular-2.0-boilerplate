@@ -1,13 +1,20 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
+
     <!-- 1. Load libraries -->
     <script src="node_modules/es6-shim/es6-shim.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <!-- 2. Configure SystemJS -->
+
+    <!-- 2. Scripts -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
+
+
+    <!-- 3. Configure SystemJS -->
     <script>
       System.config({
         packages: {
@@ -20,13 +27,37 @@
       System.import('app/boot')
             .then(null, console.error.bind(console));
     </script>
+
+    <!-- 4. CSS -->
+    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
+    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation-flex.min.css">
+
   </head>
+
+
   <!-- 3. Display the application -->
   <body>
-    <my-app>
-      <center>
-        Loading...        
-      </center>
-    </my-app>
+    <div class='container'>
+      <ng-header>
+        <center>
+          Loading...
+        </center>
+      </ng-header>
+
+      <my-app>
+        <center>
+          Loading...
+        </center>
+      </my-app>
+
+      <div class='row'>
+        <ul class="menu">
+          <li><a>One</a></li>
+          <li><a>Two</a></li>
+          <li><a>Three</a></li>
+          <li><a>Four</a></li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
