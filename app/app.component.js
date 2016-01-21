@@ -20,11 +20,13 @@ System.register(['angular2/core'], function(exports_1) {
             //----------
             AppComponent = (function () {
                 function AppComponent() {
+                    console.log(this);
+                    var elem = new Foundation.AccordionMenu($('.vertical'));
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <div class=\"callout primary\">\n          <h5>This is a secondary panel</h5>\n          <p>It has an easy to override visual style, and is appropriately subdued.</p>\n          <a href=\"#\">It's dangerous to go alone, take this.</a>\n        </div>\n        "
+                        template: "\n        <ul class=\"vertical menu\" data-accordion-menu>\n          <li>\n            <a href=\"#\">Item 1</a>\n            <ul class=\"menu veritcal nested\">\n              <li><a href=\"#\">Item 1A</a></li>\n              <li><a href=\"#\">Item 1B</a></li>\n            </ul>\n          </li>\n          <li>\n            <a href=\"#\">Item 2</a>\n            <ul class=\"menu veritcal nested\">\n              <li><a href=\"#\">Item 2A</a></li>\n              <li><a href=\"#\">Item 2B</a></li>\n            </ul>\n          </li>\n        </ul>\n        "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -35,11 +37,15 @@ System.register(['angular2/core'], function(exports_1) {
             //----------
             HeaderComponent = (function () {
                 function HeaderComponent() {
+                    this.name = 'George';
                 }
+                HeaderComponent.prototype.sayMyName = function () {
+                    console.log('My name is', this.name);
+                };
                 HeaderComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-header',
-                        template: '<h1>The Header</h1>'
+                        template: "\n            <h1>Hello {{name}}</h1>\n            <button (click)=\"sayMyName()\">Say my name</button>\n        "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HeaderComponent);

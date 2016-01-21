@@ -38,26 +38,27 @@
   <!-- 3. Display the application -->
   <body>
     <div class='container'>
-      <ng-header>
-        <center>
-          Loading...
-        </center>
-      </ng-header>
-
-      <my-app>
-        <center>
-          Loading...
-        </center>
-      </my-app>
+      <div class='columns large-4'>
+        <div class='row'>
+          <ng-header>
+            <center>
+              Loading...
+            </center>
+          </ng-header>
+        </div>
+      </div>
 
       <div class='row'>
-        <ul class="menu">
-          <li><a>One</a></li>
-          <li><a>Two</a></li>
-          <li><a>Three</a></li>
-          <li><a>Four</a></li>
-        </ul>
+        <div class='columns large-4'>
+          <my-app>
+            <center>
+              Loading...
+            </center>
+          </my-app>
+        </div>
       </div>
+
+
     </div>
   </body>
 </html>
