@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 
 declare var Foundation:any;
 
-
 //---------- Components --------//
 
     //----------
@@ -45,16 +44,22 @@ declare var Foundation:any;
 
     })
     export class HeaderComponent {
+        // declare for typescript
+        name: string;
 
+        // constructor
         constructor() {
           this.name = 'George'
         }
+
+        //functions
         sayMyName() {
           console.log('My name is', this.name)
         }
 
     }
     //----------
+
 
 
 

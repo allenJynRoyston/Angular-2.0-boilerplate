@@ -36,9 +36,11 @@ System.register(['angular2/core'], function(exports_1) {
             //----------
             //----------
             HeaderComponent = (function () {
+                // constructor
                 function HeaderComponent() {
                     this.name = 'George';
                 }
+                //functions
                 HeaderComponent.prototype.sayMyName = function () {
                     console.log('My name is', this.name);
                 };
