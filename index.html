@@ -11,7 +11,7 @@
 
     <!-- 2. Scripts -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
+    <script src="node_modules/semantic-ui/dist/semantic.min.js"></script>
 
 
     <!-- 3. Configure SystemJS -->
@@ -29,8 +29,7 @@
     </script>
 
     <!-- 4. CSS -->
-    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
-    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation-flex.min.css">
+    <link rel="stylesheet" href="node_modules/semantic-ui/dist/semantic.min.css">
 
   </head>
 
@@ -48,14 +47,13 @@
         </div>
       </div>
 
+
       <div class='row'>
-        <div class='columns large-4'>
-          <my-app>
-            <center>
-              Loading...
-            </center>
-          </my-app>
-        </div>
+        <accordion-component-1></accordion-component-1>
+      </div>
+
+      <div class='row'>
+        <accordion-component-2></accordion-component-2>
       </div>
 
 

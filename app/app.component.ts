@@ -1,45 +1,22 @@
-import {Component} from 'angular2/core';
+// -- import source
+import {Component, ElementRef, OnInit} from 'angular2/core';
+import {NgClass} from 'angular2/common';
 
-declare var Foundation:any;
+// -- declare variables
+declare var jQuery:any;
+
+interface jQuery {
+    accordion():void;
+}
 
 //---------- Components --------//
 
     //----------
     @Component({
-        selector: 'my-app',
-        template: `
-        <ul class="vertical menu" data-accordion-menu>
-          <li>
-            <a href="#">Item 1</a>
-            <ul class="menu veritcal nested">
-              <li><a href="#">Item 1A</a></li>
-              <li><a href="#">Item 1B</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Item 2</a>
-            <ul class="menu veritcal nested">
-              <li><a href="#">Item 2A</a></li>
-              <li><a href="#">Item 2B</a></li>
-            </ul>
-          </li>
-        </ul>
-        `
-    })
-    export class AppComponent {
-        constructor() {
-            console.log(this)
-            var elem = new Foundation.AccordionMenu($('.vertical') );
-        }
-    }
-    //----------
-
-    //----------
-    @Component({
         selector: 'ng-header',
+        directives: [NgClass],
         template: `
             <h1>Hello {{name}}</h1>
-            <button (click)="sayMyName()">Say my name</button>
         `
 
     })
@@ -49,19 +26,111 @@ declare var Foundation:any;
 
         // constructor
         constructor() {
-          this.name = 'George'
+          this.name = 'Allen'
+        }
+
+    }
+    //----------
+
+    //---------- toggle page dimmer
+    @Component({
+        selector: 'accordion-component-1',
+        template: `
+        <div class="ui styled accordion">
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            What is a dog?
+          </div>
+          <div class="active content">
+            <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            What kinds of dogs are there?
+          </div>
+          <div class="content">
+            <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            How do you acquire a dog?
+          </div>
+          <div class="content">
+            <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+            <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+          </div>
+        </div>
+        `
+    })
+    export class AccordionComponent1 implements OnInit {
+        // declare for typescript
+        name: string;
+        elementRef: ElementRef;
+
+        // constructor
+        constructor(elementRef: ElementRef) {
+          this.elementRef = elementRef;
         }
 
         //functions
-        sayMyName() {
-          console.log('My name is', this.name)
+        ngOnInit() {
+            jQuery(this.elementRef.nativeElement).accordion();
         }
+
 
     }
     //----------
 
 
 
+    //---------- toggle page dimmer
+    @Component({
+        selector: 'accordion-component-2',
+        template: `
+        <div class="ui styled accordion">
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            What is a dog?
+          </div>
+          <div class="active content">
+            <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            What kinds of dogs are there?
+          </div>
+          <div class="content">
+            <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+          </div>
+          <div class="title">
+            <i class="dropdown icon"></i>
+            How do you acquire a dog?
+          </div>
+          <div class="content">
+            <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+            <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+          </div>
+        </div>
+        `
+    })
+    export class AccordionComponent2 implements OnInit {
+        // declare for typescript
+        name: string;
+        elementRef: ElementRef;
+
+        // constructor
+        constructor(elementRef: ElementRef) {
+          this.elementRef = elementRef;
+        }
+
+        //functions
+        ngOnInit() {
+            jQuery(this.elementRef.nativeElement).accordion();
+        }
+
+
+    }
+    //----------
 
 
 //-------------------------------//

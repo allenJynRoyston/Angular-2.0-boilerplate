@@ -1,7 +1,12 @@
+//----- methods -----------
 import {bootstrap}        from 'angular2/platform/browser'
-import {AppComponent}     from './app.component'
-import {HeaderComponent}  from './app.component'
 
-//-------  include ---------..
-bootstrap(AppComponent);
+//------ components -------
+import {HeaderComponent}          from './app.component'
+import {AccordionComponent1}      from './app.component'
+import {AccordionComponent2}      from './app.component'
+
+//-------  include --------
 bootstrap(HeaderComponent);
+bootstrap(AccordionComponent1);
+bootstrap(AccordionComponent2);
