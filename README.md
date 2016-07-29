@@ -1,5 +1,8 @@
 # Angular-2.0 (beta)-boilerplate
 
+### Outdated!  
+Check this repo out instead:
+https://github.com/allenRoyston/Express-Angular2-Seed
 
 ### What Am I?!
 A quickstart boilerplate for those who want to dive into [Angular 2.0](https://angular.io/docs/ts/latest/quickstart.html).  This setup is straight from their main site so essentially just a shortcut to those who want to jump in without all that BORING READING.
